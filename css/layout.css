@@ -1,0 +1,81 @@
+*, *::after , *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+button, textarea {
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+  all: unset;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* DANK Mono */
+/* flex helper */
+
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.content-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* sizes helper */
+
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.mx  {
+  margin: 0 1.5rem;
+} */
+
+.my {
+  margin: 1.5rem 0;
+}

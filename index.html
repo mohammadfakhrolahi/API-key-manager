@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+  <main>
+    <div class="col-12">
+      <div class="container">
+        <div class="row p-5">
+          <div class="col-6">
+            <form onsubmit="return false">
+              <div class="form-group">
+                <label for="api_key">API Key</label>
+                <input type="text" class="form-control" id="api_key" placeholder="API KEY" name="api_key" required />
+              </div>
+              <div class="form-group">
+                <label for="api_secret">API Secret</label>
+                <input type="text" class="form-control" id="api_secret" placeholder="API Secret" name="api_secret"
+                  required />
+              </div>
+              <button type="button" id="btn-save" class="btn btn-primary">Save</button>
+            </form>
+          </div>
+
+          <div class="col-6">
+            <div class="form-inline mb-2">
+              <label for="username">UserName</label>
+              <input id="username" type="text" required name="username" class="form-control mx-2 " />
+              <button class="btn btn-danger">+</button>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">UserName</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-data">
+
+                <!-- <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+
+  <script>
+
+    // fields
+    const api_key = document.getElementById('api_key');
+    const secret_key = document.getElementById('api_secret');
+    const username = document.getElementById('username');
+    // elements
+    const btnAddUserName = document.querySelector('.btn-danger');
+    const btnSave = document.querySelector('#btn-save');
+
+    const tbody = document.querySelector('#tbody-data');
+
+
+    const deleteUserName = (e) => {
+      e.target.parentElement.remove();
+    }
+
+    const renderToTBody = (id, name) => {
+
+      const elemet = document.createElement('tr');
+      elemet.setAttribute('id', id)
+      elemet.innerHTML = `<th scope="row">${id}</th>
+                          <td>${name}</td>
+                          <td>
+                          <button class="btn btn-sm btn-danger" onclick="deleteUserName(${id})">X</button>  
+                          </td>`;
+
+      tbody.appendChild(elemet);
+    }
+
+    btnSave.addEventListener('click', () => {
+
+      if (api_key.value && secret_key.value && username.value) {
+
+        fetch('/api/v1/save', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            api_key: api_key.value,
+            secret_key: secret_key.value,
+            username: username.value
+          })
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log('data', data);
+            renderToTBody(1, 'daniel')
+          })
+          .catch(err => {
+            console.log(err);
+          });
+
+
+      }
+      else {
+        alert('Please fill all the fields');
+      }
+
+    });
+  </script>
+
+
+
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
