@@ -1,17 +1,29 @@
 @import './variables';
+@import './layout';
 
 main {
   min-height: 100vh;
-  @include felx-justify__center();
+  @include flex-justify__center();
 }
 
 #api {
-  width: 30%;
-  background: #ffffff;
+  width: 100%;
+  @include flex-justify__center();
+}
+
+#api-container {
+  @include flex-justify__around();
+  width: 90%;
+  background: $white;
   box-shadow: 0 10px 40px -1px rgba(0, 0, 0, 0.103);
-  padding: 2rem;
+  padding: 6rem 2rem;
   margin-top: 4rem;
   border-radius: 2rem;
+}
+
+// Forms
+.form-container {
+  width: 30%;
 }
 
 .form-group {
@@ -19,37 +31,33 @@ main {
   width: 100%;
 }
 
-.btn-primary {
-  background: dodgerblue;
-  color: #fff;
-  padding: 0.8rem 2rem;
-  margin-top: 1rem;
-  border: none;
-  border-radius: 0.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-
-  &:hover {
-    background: rgb(4, 119, 235);
-  }
-}
-
-input {
-  width: 100%;
-  margin: 1.5rem 0;
-  padding: 1rem 1.5rem;
-  background: #e2e4e9;
-  border: 3px solid rgba(255, 255, 255, 0);
-  border-radius: 1rem;
-  outline: none;
-
-  &:focus {
-    border: 3px solid #C7C8D1;
-    transition: 0.2s;
-  }
-}
-
 .api__list {
   margin-top: 4rem;
+}
+
+// API key manage
+#api-key-manager {
+  width: 60%;
+  @include column-justify__center-items__center();
+}
+
+#title-box {
+  width: 100%;
+  @include flex-justify__start-items__center();
+  @include grid();
+  background: $ghost-white;
+  padding: 1.5rem 3rem;
+  margin: 2rem 0;
+  border-radius: 1.5rem;
+
+  span {
+    font: {
+      size: 1.8rem;
+      weight: 500;
+    }
+  }
+}
+
+ul {
+  width: 100%;
 }

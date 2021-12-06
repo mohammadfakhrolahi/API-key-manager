@@ -1,0 +1,220 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// imports
+@import './colors';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+button,
+textarea {
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+  all: unset;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* DANK Mono */
+/* flex helper */
+
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.content-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* sizes helper */
+
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.mx {
+  margin: 0 1.5rem;
+}
+
+.my {
+  margin: 1.5rem 0;
+}
+
+// ---- Header tags ----
+h3 {
+  font: {
+    size: 3rem;
+    weight: 500;
+  }
+}
+
+// ---- Components ----
+// Buttons
+// Large button
+.button-l {
+  background: $bright-navy-blue;
+  color: $white;
+  padding: 0.8rem 5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: $bright-navy-blue2;
+  }
+}
+
+// Small button
+.button-s {
+  width: 6rem;
+  height: 3.2rem;
+  background: $bright-navy-blue;
+  color: $white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.2s;
+  }
+}
+
+#btn-edit {
+  background: $sunglow;
+  color: $black;
+
+  .fas {
+    display: none;
+  }
+
+  &:hover {
+    background: $sunglow2;
+
+    .btn-text {
+      display: none;
+    }
+
+    .fas {
+      display: block;
+    }
+  }
+}
+
+#btn-delete {
+  background: $imperial-red;
+
+  .fas {
+    display: none;
+  }
+
+  &:hover {
+    background: $imperial-red2;
+
+    .btn-text {
+      display: none;
+    }
+
+    .fas {
+      display: block;
+    }
+  }
+}
+
+// Inputs
+.input {
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: #e2e4e9;
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  outline: none;
+
+  &:focus {
+    border: 3px solid #c7c8d1;
+    transition: 0.2s;
+  }
+}
+
+// ---- List ----
+.api-list__item {
+  width: 100%;
+  @include grid();
+  padding: 0.5rem 3rem;
+  margin: 2rem 0;
+  border: 3px solid $ghost-white2;
+  border-radius: 1.5rem;
+
+  .list__item {
+    @include flex-justify__start-items__center();
+    font-size: 1.6rem
+  }
+
+  .list__item__btn-container {
+    @include flex-justify__between();
+  }
+
+  &:hover {
+    background: $ghost-white;
+    border: 3px solid $ghost-white;
+    transition: 0.2s;
+  }
+}

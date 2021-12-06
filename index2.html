@@ -8,11 +8,10 @@
   <title>API Key Storage</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./css/layout.css">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -22,27 +21,235 @@
 
     <section id="api" class="">
 
-      <form action="post" onsubmit="return false" class="form-container">
+      <div id="api-container">
 
-        <div class="form-group">
-          <label for="api_key">API Key</label>
-          <input id="api_key" name="api_key" class="" type="text" />
+        <form action="post" onsubmit="return false" class="form-container">
+
+          <div class="form-group">
+            <label for="api_key">User Name</label>
+            <input id="api_key" name="api_key" class="input" type="text" />
+          </div>
+  
+          <div class="form-group">
+            <label for="api_key">API Key</label>
+            <input id="api_key" name="api_key" class="input" type="text" />
+          </div>
+  
+          <div class="form-group">
+            <label for="api_secret">API Secret</label>
+            <input id="api_secret" name="api_secret" class="input" type="text" />
+          </div>
+  
+          <div id="btn-submit-container">
+            <button class="btn-submit button-l btn-primary" id="btn-submit">Submit</button>
+            
+          </div>
+  
+        </form>
+  
+        <div id="api-key-manager">
+  
+          <h3>API Key Manager</h3>
+  
+          <div id="title-box">
+            <span>#</span>
+            <span>User Name</span>
+            <span>Api Key</span>
+            <span>Api Secret</span>
+          </div>
+  
+          <ul>
+            <li class="api-list">
+  
+              <div class="api-list__item">
+  
+                <div class="list__item__number list__item">
+                  <span>1</span>
+                </div>
+  
+                <div class="list__item__user-name list__item">
+                  <span>daniel</span>
+                </div>
+  
+                <div class="list__item__api-key list__item">
+                  <span>adgsgassdf</span>
+                </div>
+  
+                <div class="list__item__api-secret list__item">
+                  <span>asdf*******p2</span>
+                </div>
+  
+                <div class="list__item__btn-container list__item">
+  
+                  <button class="btn-edit button-s btn-primary" id="btn-edit">
+                    <span class="btn-text">Edit</span>
+                    <i class="fas fa-pen"></i>
+                  </button>
+  
+                  <button class="btn-delete button-s btn-primary" id="btn-delete">
+                    <span class="btn-text">Delete</span>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+  
+                </div>
+              </div>
+  
+            </li>
+
+            <li class="api-list">
+  
+              <div class="api-list__item">
+  
+                <div class="list__item__number list__item">
+                  <span>1</span>
+                </div>
+  
+                <div class="list__item__user-name list__item">
+                  <span>daniel</span>
+                </div>
+  
+                <div class="list__item__api-key list__item">
+                  <span>adgsgassdf</span>
+                </div>
+  
+                <div class="list__item__api-secret list__item">
+                  <span>asdf*******p2</span>
+                </div>
+  
+                <div class="list__item__btn-container list__item">
+  
+                  <button class="btn-edit button-s btn-primary" id="btn-edit">
+                    <span class="btn-text">Edit</span>
+                    <i class="fas fa-pen"></i>
+                  </button>
+  
+                  <button class="btn-delete button-s btn-primary" id="btn-delete">
+                    <span class="btn-text">Delete</span>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+  
+                </div>
+              </div>
+  
+            </li>
+
+            <li class="api-list">
+  
+              <div class="api-list__item">
+  
+                <div class="list__item__number list__item">
+                  <span>1</span>
+                </div>
+  
+                <div class="list__item__user-name list__item">
+                  <span>daniel</span>
+                </div>
+  
+                <div class="list__item__api-key list__item">
+                  <span>adgsgassdf</span>
+                </div>
+  
+                <div class="list__item__api-secret list__item">
+                  <span>asdf*******p2</span>
+                </div>
+  
+                <div class="list__item__btn-container list__item">
+  
+                  <button class="btn-edit button-s btn-primary" id="btn-edit">
+                    <span class="btn-text">Edit</span>
+                    <i class="fas fa-pen"></i>
+                  </button>
+  
+                  <button class="btn-delete button-s btn-primary" id="btn-delete">
+                    <span class="btn-text">Delete</span>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+  
+                </div>
+              </div>
+  
+            </li>
+
+            <li class="api-list">
+  
+              <div class="api-list__item">
+  
+                <div class="list__item__number list__item">
+                  <span>1</span>
+                </div>
+  
+                <div class="list__item__user-name list__item">
+                  <span>daniel</span>
+                </div>
+  
+                <div class="list__item__api-key list__item">
+                  <span>adgsgassdf</span>
+                </div>
+  
+                <div class="list__item__api-secret list__item">
+                  <span>asdf*******p2</span>
+                </div>
+  
+                <div class="list__item__btn-container list__item">
+  
+                  <button class="btn-edit button-s btn-primary" id="btn-edit">
+                    <span class="btn-text">Edit</span>
+                    <i class="fas fa-pen"></i>
+                  </button>
+  
+                  <button class="btn-delete button-s btn-primary" id="btn-delete">
+                    <span class="btn-text">Delete</span>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+  
+                </div>
+              </div>
+  
+            </li>
+            
+            <li class="api-list">
+  
+              <div class="api-list__item">
+  
+                <div class="list__item__number list__item">
+                  <span>1</span>
+                </div>
+  
+                <div class="list__item__user-name list__item">
+                  <span>daniel</span>
+                </div>
+  
+                <div class="list__item__api-key list__item">
+                  <span>adgsgassdf</span>
+                </div>
+  
+                <div class="list__item__api-secret list__item">
+                  <span>asdf*******p2</span>
+                </div>
+  
+                <div class="list__item__btn-container list__item">
+  
+                  <button class="btn-edit button-s btn-primary" id="btn-edit">
+                    <span class="btn-text">Edit</span>
+                    <i class="fas fa-pen"></i>
+                  </button>
+  
+                  <button class="btn-delete button-s btn-primary" id="btn-delete">
+                    <span class="btn-text">Delete</span>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+  
+                </div>
+              </div>
+  
+            </li>
+          </ul>
+  
         </div>
 
-        <div class="form-group">
-          <label for="api_secret">API Secret</label>
-          <input id="api_secret" name="api_secret" class="" type="text" />
-        </div>
-
-        <div id="btn-submit-container">
-          <button id="btn-submit" class="btn-primary">Save</button>
-        </div>
-
-      </form>
-
-      <div class="api__list">
-        <h3>API List</h3>
       </div>
+
+      
 
     </section>
 

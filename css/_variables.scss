@@ -1,10 +1,42 @@
-@mixin felx-justify__center {
-    display: flex;
-    justify-content: center;
+@mixin flex-justify__center {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+@mixin flex-justify__between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-justify__around {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+@mixin flex-justify__start-items__center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 @mixin flex-column-items__start {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin column-justify__center-items__center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// CSS grid
+@mixin grid {
+  display: grid;
+  grid-template-columns: 4rem 1.1fr 2fr 2fr 1.2fr;
 }
